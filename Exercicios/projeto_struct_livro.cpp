@@ -26,7 +26,7 @@ int main (){
     cout << "----------------------------------" <<endl;
     cout << "Quantos livros voce quer inserir ?" <<endl;
     
-    if(numLivros < 0){
+    if(numLivros <= 0){
         cout << "Voce deve inserir uma quantidade acima de 0 !" << endl;
         return 0;
     }
@@ -54,7 +54,7 @@ int main (){
             cin >> listaLivros[i].qtdPaginas;
         }
 
-        void quebra_linha();
+        quebra_linha();
 
         cout << "Detalhe dos livros inseridos : " <<endl;
         for(int i = 0; i < numLivros; i++){
