@@ -1,0 +1,58 @@
+vector<Contato>: É um array dinâmico de um struct a qual contem as informações de contato;
+
+listaContatos : É o nome da variavel que representa o vetor criado acima e nela sera colocada as novas informações dos contatos;
+
+Contato novoContato :  Declaran uma variável local chamada novoContato do tipo Contato. Esta linha cria uma nova instância da struct Contato chamada novoContato.
+Essa instância será usada para armazenar informações sobre um novo contato que o usuário deseja inserir.
+
+push_back(novoContato): É um método do vetor listaContatos que adiciona um novo elemento (no caso, um novo contato representado por novoContato) ao final do vetor.
+Isso permite que você insira novos contatos na lista de contatos.
+Ex :
+
+vector<Contato> listaContatos;
+
+switch(opcao){
+    case 1:
+        Contato novoContato;
+        cout << "Nome: ";
+        cin.ignore();
+        getline(cin, novoContato.nome);
+        cout << "Telefone: ";
+        getline(cin, novoContato.telefone);
+        listaContatos.push_back(novoContato);
+        }
+
+for (const Contato& contato : listaContatos) :
+
+for: Isso inicia um loop for que percorre todos os elementos do vetor listaContatos.
+
+const Contato& contato: Declara uma variável chamada contato do tipo Contato que representa cada elemento do vetor.
+O & indica uma referência constante, o que significa que você não pode modificar o objeto contato dentro do loop.
+: listaContatos: Indica a fonte de dados para o loop, ou seja, o vetor listaContatos que estamos percorrendo.
+
+default : No exemplo abaixo, se opcao não for igual a 1 ou 2, o bloco de código dentro de default será executado.
+O uso de default é opcional em um switch, e você não precisa tê-lo se não for necessário.
+No entanto, é uma prática comum incluir um bloco default para lidar com valores inesperados ou inválidos da expressão em questão.
+
+Ex : 
+
+switch (opcao) {
+    case 1:
+        // Código para a opção 1
+        break;
+    case 2:
+        // Código para a opção 2
+        break;
+    default:
+        // Código para o caso em que nenhuma das opções anteriores coincide com opcao
+}
+
+
+if(indice >= 1 && indice <= listaContato.size()) :
+
+Verifica se o indice é maior ou igual a 1 ou se o indice é menor que o tamanho da variavel do vetor(array) que acessa a struct Contato;
+
+getline(cin, listaContato[indice -1].Nome) :
+
+Insere na variavel o novo valor do indice que começa em 1 e ao mesmo tempo o diminui pois a lista dinamica/array sempre começa em 0,
+isso é feito para que fique na posição correta do indice.
